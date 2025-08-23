@@ -1,0 +1,10 @@
+:root {
+  --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, "Noto Sans";
+}
+html { font-family: var(--font-sans); }
+body, button, input, select, textarea { font: inherit; }
+
+body{
+  margin: 50px;
+}

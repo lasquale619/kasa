@@ -1,0 +1,43 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+ul{
+    display: flex;
+    gap: 57px;
+    list-style: none;
+    
+}
+
+ul li{
+    display: inline-block;
+    justify-content: flex-end;
+    font-weight: 500;
+    font-size: 24px;
+    
+    padding: 0px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.logo{
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo img{
+    display: block;
+    height: 68px;
+    width: 210px;
+}
