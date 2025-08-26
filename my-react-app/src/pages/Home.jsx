@@ -1,12 +1,11 @@
+import Banner from "@/Components/Banner";
+import banner  from"@/assets/banner.png";
 
-import Header from '../Components/Header';
-
-const Home = () => {
+export default function Home() {
     return (
-        <div>
-            Home page
-        </div>
-    );
-};
-
-export default Home;
+    <>
+      <Banner image={banner} text="Chez vous, partout et ailleurs" />
+      {/* le reste de ta page ici (cartes, etc.) */}
+    </>
+  );
+}
