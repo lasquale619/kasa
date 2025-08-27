@@ -1,4 +1,4 @@
-import "@/styles/banner.css";
+import "@/Components/styles/banner.css";
 
 
 export default function Banner({ text }) {
