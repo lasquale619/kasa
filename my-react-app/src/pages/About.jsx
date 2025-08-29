@@ -1,12 +1,11 @@
-import Header from '../Components/Header';
+import Banner from "@/Components/Banner";
+import Aboutbanner  from"@/assets/Aboutbanner.png";
 
-const About = () => {
+export default function About() {
     return (
-        <div>
-            
-            About page
-        </div>
-    );
-};
-
-export default About;
+    <>
+      <Banner image={Aboutbanner}  />
+      
+    </>
+  );
+}

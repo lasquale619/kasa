@@ -1,0 +1,12 @@
+.footer-img {
+  position: fixed;
+  left: 0;
+  right: 0;
+  
+}
+
+.footer-img img{
+    display: block;
+    width: 100%;
+    height: auto;
+}

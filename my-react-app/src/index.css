@@ -6,5 +6,6 @@ html { font-family: var(--font-sans); }
 body, button, input, select, textarea { font: inherit; }
 
 body{
-  margin: 50px;
+  margin: 30px 50px 0px 50px;
 }
+
