@@ -1,0 +1,55 @@
+/* Grille */
+.grid-wrap {
+  display: grid;
+  width: 100%;
+  background: #f6f6f6;
+  border-radius: 25px;
+  gap: 50px;
+  padding: 50px 0;
+  justify-items: center;
+  grid-template-columns: repeat(3, 0fr);
+  justify-content: center;
+}
+
+/* --------- CARD --------- */
+.k-card {
+  position: relative;
+  display: block;
+  border-radius: 10px;
+  height: 350px; 
+  width: 375px;         
+  background-size: cover;       
+  background-position: center;    
+   
+}
+
+/* Titre en bas à gauche */
+.k-card__title {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.k-card__img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           
+}
+
+.k-card__overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.55) 70%);
+}
+
+.k-card__img,
+.k-card__overlay{
+  border-radius: inherit;
+}
