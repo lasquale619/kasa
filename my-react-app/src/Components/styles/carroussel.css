@@ -1,0 +1,71 @@
+.car {
+  position: relative;
+  height: 420px;                 /* ajuste la hauteur si besoin */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
+  background: #f3f4f6;
+}
+
+.car__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;             /* "contain" si tu veux éviter le crop */
+  display: block;
+}
+
+/* Boutons transparents : juste l’icône */
+.car__navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 56px;
+  height: 56px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 999px;          /* hitbox ronde confortable */
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.car__navBtn--left  { left: 16px; }
+.car__navBtn--right { right: 16px; }
+
+.car__navBtn:hover       { transform: translateY(-50%) scale(1.06); }
+.car__navBtn:active      { transform: translateY(-50%) scale(0.98); }
+.car__navBtn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Icône chevron (même fichier que Collaps), tournée gauche/droite */
+.car__chev {
+  width: 79px;                   /* tu avais 79px : je garde */
+  height: 79px;
+  display: block;
+  pointer-events: none;
+}
+
+.car__chev--left  { transform: rotate( 90deg); }
+.car__chev--right { transform: rotate(-90deg); }
+
+/* Compteur centré en bas */
+.car__count {
+  position: absolute;
+  bottom: 10px;
+  inset-inline: 0;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0,0,0,.6);
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .car { height: 300px; }
+  .car__navBtn { min-width: 46px; height: 46px; }
+  .car__chev   { width: 32px; height: 32px; } /* un peu plus petit sur mobile */
+}

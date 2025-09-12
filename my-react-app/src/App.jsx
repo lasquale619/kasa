@@ -1,9 +1,9 @@
 import { Routes, Route, } from "react-router-dom";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
-import Logement from "@/pages/Logement";
 import NotFound from "@/pages/NotFound";
 import Layout from "@/pages/Layout";
+import LogementId from "@/pages/Logement/id";
 
 export default function App() {
   return (
@@ -19,7 +19,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
 
           {/* Fiche logement */}
-          <Route path="/logement" element={<Logement />} />
+          <Route path="/logement/:id" element={<LogementId />} />
 
           {/* 404 pour toute autre URL */}
           <Route path="*" element={<NotFound />} />

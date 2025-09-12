@@ -64,3 +64,16 @@
 .panel-body{
     padding: 20px;
 }
+
+.panel-body ul{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px 5px;
+  margin: 0;
+}
+
+.panel-body li{
+  font-size: 18px;
+  font-weight: 400;
+}
