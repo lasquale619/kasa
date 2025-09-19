@@ -1,7 +1,6 @@
 .lodg {
   --kasa-red: #ff6060;
   --text-muted: #000000;
-  padding: 24px 0;
 }
 
 /* ===== En-tête (titre / tags / hôte / rating) ===== */
@@ -80,10 +79,13 @@
 /* ===== Panneaux (Description / Équipements) ===== */
 .lodg__cols {
   margin-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
   gap: 16px;
   font-size: 18px; 
+}
+
+.lodg__cols .collaps{
+    width: 50%;
 }
 
 /* Taille du titre des Collaps sur la page Logement */
@@ -93,12 +95,51 @@
   font-style: bold;     
 }
 
-/* Responsive (optionnel) */
-@media (max-width: 520px) {
-  .lodg__collapsTitle { font-size: 18px; }
-}
 
+@media (max-width: 1024px) {
+  .lodg__cols { 
+    grid-template-columns: 1fr 1fr; 
+    }
+  .lodg__top{
+    display: flex;
+    flex-direction: column;
+  }
 
-@media (min-width: 900px) {
-  .lodg__cols { grid-template-columns: 1fr 1fr; }
+  .lodg__title{
+    font-size: 18px !important;
+  }
+
+  .lodg__cols{
+    flex-wrap: wrap;
+    
+  }
+  .lodg__right{
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .tag{
+    font-size: 10px;
+  }
+
+  .host__avatar{
+    width: 32px;
+    height: 32px;
+  }
+
+  .host__name{
+    font-size: 12px;
+  }
+
+  .rating{
+    font-size: 25px;
+  }
+  .lodg__collapsTitle{
+    font-size: 13px;
+  }
+
+  .lodg__cols .collaps{
+    width: 100%;
+  }
 }

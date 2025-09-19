@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Chevron from "@/assets/chevron-down.svg";
+import Chevron from "@/assets/chevron-up.svg";
 
 export default function Collaps({ title, children, defaultOpen = false }) {
     const [open, setOpen] = useState(defaultOpen);

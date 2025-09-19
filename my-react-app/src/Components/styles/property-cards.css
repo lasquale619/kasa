@@ -53,3 +53,24 @@
 .k-card__overlay{
   border-radius: inherit;
 }
+
+
+@media (max-width: 1024px) {
+  .grid-wrap { 
+    grid-template-columns: 1fr !important;
+    background: none;
+    
+  }
+
+  .k-card{
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 1 / 1;   /* remplace height/width fixes */
+  overflow: hidden; 
+  }
+}

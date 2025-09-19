@@ -29,3 +29,22 @@
     margin-bottom: 50px;
 }
     
+
+@media (max-width: 1024px){
+    .not-found{
+        margin: 80px 0;
+    }
+
+
+    .not-found h1{
+    font-size: 96px;
+  }
+
+  .not-found p{
+    font-size: 18px;
+  }
+
+  .not-found a:link{
+    font-size: 14px;
+  }
+}  
