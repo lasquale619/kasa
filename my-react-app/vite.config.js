@@ -14,4 +14,14 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  test: {
+    environment: "jsdom",          // DOM simulé pour tester les composants
+    globals: true,                 // describe/it/expect utilisables sans import
+    // setupFiles: "./src/setupTests.js", // Commenté temporairement
+    css: true,                     // autorise import de CSS dans les tests
+    coverage: {
+      reporter: ["text", "html"],
+      reportsDirectory: "./coverage",
+    },
+  },
 });

@@ -8,7 +8,7 @@ export default function Banner({ image,text }) {
         url(${image})`,
     };
     return (
-        <section className="banner" style={bannerStyle}>
+        <section className="banner" style={bannerStyle} aria-label="Banniere">
             {text && <h1 className="banner-text">{text}</h1>}
         </section>
     );
