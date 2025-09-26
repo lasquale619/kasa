@@ -64,7 +64,7 @@ describe('Composant Banner', () => {
   it('possède un aria-label pour l’accessibilité', () => {
     render(<Banner image={mockImage} />)
 
-    const banner = screen.getByRole('region', { name: /banniere/i })
+    const banner = screen.getByRole('region', { name: /Banniere/i })
     expect(banner).toHaveAttribute('aria-label', 'Banniere')
   })
 })

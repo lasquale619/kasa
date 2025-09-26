@@ -1,4 +1,3 @@
-// vite.config.js
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "node:path";
@@ -17,7 +16,7 @@ export default defineConfig({
   test: {
     environment: "jsdom",          // DOM simulé pour tester les composants
     globals: true,                 // describe/it/expect utilisables sans import
-    // setupFiles: "./src/setupTests.js", // Commenté temporairement
+    // setupFiles: "./src/setupTests.js"
     css: true,                     // autorise import de CSS dans les tests
     coverage: {
       reporter: ["text", "html"],
