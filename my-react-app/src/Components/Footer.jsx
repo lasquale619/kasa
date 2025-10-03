@@ -1,14 +1,11 @@
 import "@/Components/styles/footer.css";
-import footerImg from "@/assets/footer.png";
-import footerImgM from "@/assets/m_footer.png";
+import footerImgM from "@/assets/LogoKF.svg";
 
 export default function Footer() {
   return (
-    <footer className="footer-img" aria-label="footer kasa">
-      <picture>        
-        <source media="(max-width: 1024px)" srcSet={footerImgM} />        
-        <img src={footerImg} alt="Kasa footer" />
-      </picture>
+    <footer className="Footer" aria-label="footer kasa">          
+        <img src={footerImgM} alt="Kasa footer" />
+        <p>© 2020 Kasa. All<br className="mobile-break" />rights reserved</p>
     </footer>
   );
 }
