@@ -1,13 +1,13 @@
-// src/Components/Carrousel.jsx
+
 import { useState } from "react";
 import Chevron from "@/assets/chevron-down.svg";
 import "@/Components/styles/carroussel.css";
 
 export default function Carrousel({
-  images = [],          // tableau des URLs d'images
-  alt = "",             // alt pour l'image affichée
-  showCount = true,     // afficher "1/N" en bas
-  initialIndex = 0,     // index de départ
+  images = [],          
+  alt = "",             
+  showCount = true,     
+  initialIndex = 0,     
 }) {
   const [idx, setIdx] = useState(initialIndex);
   const total = images.length;

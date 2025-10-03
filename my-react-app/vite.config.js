@@ -14,10 +14,9 @@ export default defineConfig({
     },
   },
   test: {
-    environment: "jsdom",          // DOM simulé pour tester les composants
-    globals: true,                 // describe/it/expect utilisables sans import
-    // setupFiles: "./src/setupTests.js"
-    css: true,                     // autorise import de CSS dans les tests
+    environment: "jsdom",          
+    globals: true,                 
+    css: true,                     
     coverage: {
       reporter: ["text", "html"],
       reportsDirectory: "./coverage",

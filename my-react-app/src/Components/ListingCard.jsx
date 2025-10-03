@@ -1,4 +1,3 @@
-// src/Components/ListingCard.jsx
 import { Link } from "react-router-dom";
 import "@/Components/styles/property-cards.css"; 
 

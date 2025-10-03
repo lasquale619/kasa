@@ -6,21 +6,25 @@ import ListingsGrid from "@/Components/ListingsGrid";
 export default function Home() {
   const [items, setItems] = useState([]);
 
-  useEffect(() => {
-    (async () => {
+useEffect(() => {
+  (async () => {
+    try {
       const res = await fetch("http://localhost:8080/api/properties");
       const data = await res.json();
-      
+
       // les champs nécessaires aux cards
       setItems(
-        (Array.isArray(data) ? data : []).map(({ id, title, cover, }) => ({
+        (Array.isArray(data) ? data : []).map(({ id, title, cover }) => ({
           id,
           title,
           cover,
         }))
       );
-    })();
-  }, []);
+    } catch (err) {
+      console.error("Erreur lors du fetch :", err);
+    }
+  })();
+}, []);
 
   return (
     <>

@@ -1,28 +1,26 @@
-import { useEffect, useState } from "react";              // Hooks React: état et effets
-import { useNavigate, useParams } from "react-router-dom"; // lire l'id d'URL et rediriger
+import { useEffect, useState } from "react";              
+import { useNavigate, useParams } from "react-router-dom"; 
 import "@/Components/styles/logement.css";
 import Collaps from "@/Components/Collaps";
 import Carrousel from "@/Components/Carrousel";
 
 export default function LogementId() {
-    const { id } = useParams();           //  récupère l'ID depuis /logement/:id
-    const navigate = useNavigate();       //  rediriger vers not-found si ID inconnu
+    const { id } = useParams();           
+    const navigate = useNavigate();     
+    const [logement, setLogement] = useState(null);              
 
-    // États de la page
-    const [logement, setLogement] = useState(null); // données du logement 
-    const [idx, setIdx] = useState(0);              // index de la premiere photo dans le carrousel
-
-    // Chargement des données à chaque changement d'ID
-    useEffect(() => {
-        setIdx(0); // on repart sur la 1ʳᵉ photo quand l'ID change
-
-        // on fetch la liste 
+    
+    useEffect(() => {        
         fetch("http://localhost:8080/api/properties")
-            .then((r) => r.json())                                        // puis transforme la réponse en JSON
-            .then((arr) => arr.find((x) => String(x.id) === String(id)))  // puis on cherche localement l'élément par id
-            .then((item) => (item ? setLogement(item) : navigate("/not-found", { replace: true }))); // si trouvé → on l'affiche sinon → redirection 404
+            .then((r) => r.json())                                        
+            .then((arr) => arr.find((x) => String(x.id) === String(id)))  
+            .then((item) => (item ? setLogement(item) : navigate("/not-found", { replace: true })))
+            
+            .catch((err) => {
+            console.error("Erreur lors du fetch :", err);
+        }); 
 
-    }, [id, navigate]); // relance l'effet quand l'id change
+    }, [id, navigate]); 
 
     // Tant que "logement" est null, on montre un petit loader
     if (!logement) return <div className="lodg__loading">Chargement…</div>;
@@ -33,11 +31,7 @@ export default function LogementId() {
         : logement.cover
             ? [logement.cover]
             : [];
-    const total = pictures.length; // nombre d'images
-
-    // Navigation carrousel (avec boucle circulaire)
-    const prev = () => setIdx((i) => (i - 1 + total) % total); // image précédente
-    const next = () => setIdx((i) => (i + 1) % total);         // image suivante
+    const total = pictures.length;          
 
     // Note bornée entre 0 et 5 + découpe du nom de l'hôte (prénom / reste)
     const rating = Math.min(5, Math.max(0, Number(logement.rating) || 0));
@@ -50,14 +44,14 @@ export default function LogementId() {
                 alt={`${logement.title || "Logement"} – ${logement.location || ""}`}
             />
 
-            {/* === EN-TÊTE : titre / localisation / tags à gauche — étoiles + hôte à droite === */}
+            
             <section className="lodg__top">
                 <div>
                     <h1 className="lodg__title">{logement.title}</h1>
                     <p className="lodg__location">{logement.location}</p>
                     <div className="lodg__tags">
                         {(logement.tags || []).map((t) => (
-                            <span className="tag" key={t}>{t}</span> // chaque tag sous forme de pill rouge
+                            <span className="tag" key={t}>{t}</span> 
                         ))}
                     </div>
                 </div>

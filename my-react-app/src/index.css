@@ -15,7 +15,7 @@ body{
 
 *, *::before, *::after { box-sizing: border-box; }
 
-/* Mobile */
+
 @media (max-width: 600px) {
   .main-contents { margin: 0 16px !important; }
 }

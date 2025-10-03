@@ -10,18 +10,13 @@ export default function App() {
     <div className="App">
       <Routes>
         <Route element={<Layout />}>
-
-          {/* page d'accueil */}
+          
           <Route index element={<Home />} />
-          <Route path="/home" element={<Home />} />
 
-          {/* à propos */}
-          <Route path="/about" element={<About />} />
-
-          {/* Fiche logement */}
+          <Route path="/home" element={<Home />} />          
+          <Route path="/about" element={<About />} />          
           <Route path="/logement/:id" element={<LogementId />} />
-
-          {/* 404 pour toute autre URL */}
+          
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

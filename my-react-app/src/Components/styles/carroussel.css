@@ -67,5 +67,6 @@
 @media (max-width: 520px) {
   .car { height: 300px; }
   .car__navBtn { min-width: 46px; height: 46px; }
-  .car__chev   { width: 32px; height: 32px; } /* un peu plus petit sur mobile */
+  .car__chev   { width: 32px; height: 32px; } 
+  .car__count {display: none;}
 }

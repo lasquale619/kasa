@@ -1,4 +1,3 @@
-// src/Components/ListingsGrid.jsx
 import ListingCard from "./ListingCard";
 
 export default function ListingsGrid({ items = [] }) {

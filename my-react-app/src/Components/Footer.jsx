@@ -5,10 +5,8 @@ import footerImgM from "@/assets/m_footer.png";
 export default function Footer() {
   return (
     <footer className="footer-img" aria-label="footer kasa">
-      <picture>
-        {/* Mobile / tablette */}
-        <source media="(max-width: 1024px)" srcSet={footerImgM} />
-        {/* Desktop  */}
+      <picture>        
+        <source media="(max-width: 1024px)" srcSet={footerImgM} />        
         <img src={footerImg} alt="Kasa footer" />
       </picture>
     </footer>
